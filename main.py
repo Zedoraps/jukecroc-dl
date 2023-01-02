@@ -83,22 +83,6 @@ def download_song(exportDir, videosToDownload, token):
 
 
 def run(user, password, output):
-
-    try:
-        if requests.head("https://google.com").ok:
-            print("Connected to the Internet")
-        else:
-            raise Exception("Not ok answer")
-    except:
-        print("Connection failed, waiting 30 seconds and retrying")
-        time.sleep(30)
-        if requests.head("https://google.com").ok:
-            print("Now we are connected to the Internet")
-        else:
-            print("Not Connected!")
-            exit(9)
-
-
     videosToDownload = []
 
     token = get_token(user, password)
